@@ -39,10 +39,9 @@ function getSeason(dat) {
     return res}
   else if ( !isNaN(Date.parse(dat))){
        throw new Error("Invalid date!")}
- else if ( arguments.length > 1 || typeof arguments !== 'object'){
+ else if ( arguments.length !== 1 || typeof arguments !== 'object'){
     throw new Error("Invalid date!")}
-  else if ( arguments.length == 0){
-      throw new Error( "Unable to determine the time of year!")}
+
 //   else if ( arguments.length > 1 || typeof arguments !== 'object')
 // {  return true}
 //   else if ( isNaN(Date.parse(dat)))
