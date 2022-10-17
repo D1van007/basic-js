@@ -31,17 +31,31 @@ function getSeason(dat) {
 
   let res = season[dat.getMonth()]
 
-  // for (key in season) {
-  // if (dat.toString == season[key]){
-  // return dat}}
+
+  try{
+    dat.toJSON()
+  }catch(err){
+    throw new Error('Invalid date!');
+  }
+  try{
+    isNaN(Date.parse(dat))
+  }catch(err){
+    throw new Error('Invalid date!');
+  }
+  try{
+    arguments.length == 1 || typeof arguments == 'object'
+  }catch(err){
+    throw new Error('Invalid date!');
+  }
 
   if (res == 'winter' || 'spring' || 'summer'|| 'autumn') {
     return res}
+    
   else if ( !isNaN(Date.parse(dat))){
        throw new Error("Invalid date!")}
  else if ( arguments.length !== 1 || typeof arguments !== 'object'){
     throw new Error("Invalid date!")}
-
+   
 //   else if ( arguments.length > 1 || typeof arguments !== 'object')
 // {  return true}
 //   else if ( isNaN(Date.parse(dat)))
